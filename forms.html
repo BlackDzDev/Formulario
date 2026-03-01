@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Flash Point</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #2b2b2b;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            max-width: 700px;
+            width: 100%;
+            border-top: 5px solid #ff4500;
+        }
+        .banner {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 2px solid #ff4500;
+        }
+        h1 {
+            text-align: center;
+            color: #ff4500;
+            margin-bottom: 5px;
+        }
+        .warning-box {
+            background-color: #3f1d1d;
+            border-left: 4px solid #ff4500;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        h3 {
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            color: #ffa500;
+        }
+        .question {
+            margin-bottom: 25px;
+            background-color: #242424;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        .question > label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            font-size: 17px;
+            color: #ff9500;
+            border-left: 4px solid #ff4500;
+            padding-left: 10px;
+        }
+        input[type="text"], input[type="number"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #151515;
+            color: #fff;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 15px;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #ff4500;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 14px;
+        }
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #dcdcdc;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .radio-item input { 
+            margin: 0; 
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        button:hover { background-color: #d13800; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://images.alphacoders.com/126/1266726.png" alt="Gohan Beast Banner" class="banner">
+
+        <h1>Formulário Flash Point</h1>
+        
+        <div class="warning-box">
+            <STRONG>O servidor ainda não está aberto, então nós necessitamos que todos que forem aceitos tenham paciência. Caso você não tenha paciência para esperar o servidor abrir, favor não fazer o formulário.</STRONG><br><br>
+        </div>
+
+        <form id="dragonRageForm">
+            
+            <h3>Informações Pessoais</h3>
+
+            <div class="question">
+                <label>Qual o seu nome?</label>
+                <input type="text" id="nome" required>
+            </div>
+
+            <div class="question">
+                <label>Quantos anos você tem?</label>
+                <input type="number" id="idade" required>
+            </div>
+
+            <div class="question">
+                <label>Qual é o seu discord? (Exemplo: Rodyzin)</label>
+                <input type="text" id="discord_user" required>
+            </div>
+
+            <div class="question">
+                <label>Qual plataforma você joga?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="plataforma" value="Pc" required> Pc</label>
+                    <label class="radio-item"><input type="radio" name="plataforma" value="Mobile"> Mobile</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Você se considera uma pessoa responsável?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="responsavel" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="responsavel" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Você se considera uma pessoa madura?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="madura" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="madura" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Em qual ou quais turnos você está disponível para se dedicar ao servidor?</label>
+                <div class="checkbox-group">
+                    <label class="radio-item"><input type="checkbox" name="turnos" value="Manhã 06:00 / 12:00"> Manhã 06:00 / 12:00</label>
+                    <label class="radio-item"><input type="checkbox" name="turnos" value="Tarde 12:00 / 17:00"> Tarde 12:00 / 17:00</label>
+                    <label class="radio-item"><input type="checkbox" name="turnos" value="Noite 17:00 / 00:00"> Noite 17:00 / 00:00</label>
+                    <label class="radio-item"><input type="checkbox" name="turnos" value="Madrugada 00:00 / 06:00"> Madrugada 00:00 / 06:00</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Você é uma pessoa boa em comunicação?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="comunicacao" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="comunicacao" value="+ou-"> +ou-</label>
+                    <label class="radio-item"><input type="radio" name="comunicacao" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Sua ortografia é boa?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="ortografia" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="ortografia" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Você tem algum microfone que possa se comunicar em call?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="microfone" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="microfone" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <h3>Perguntas sobre experiência</h3>
+
+            <div class="question">
+                <label>Você sabe jogar DragonBlock C?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="sabe_dbc" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="sabe_dbc" value="Sim, mais ainda tenho coisas a aprender"> Sim, mais ainda tenho coisas a aprender.</label>
+                    <label class="radio-item"><input type="radio" name="sabe_dbc" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Você joga DragonBlock C a quanto tempo?</label>
+                <input type="text" id="tempo_dbc" required>
+            </div>
+
+            <div class="question">
+                <label>Em quais servidores de DragonBlock C você já trabalhou?</label>
+                <input type="text" id="servidores_trabalhou" required>
+            </div>
+
+            <div class="question">
+                <label>Você sabe jogar no servidor?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="sabe_servidor" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="sabe_servidor" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Você trabalha há quanto tempo em servidores de DragonBlock C?</label>
+                <input type="text" id="tempo_trabalho_dbc" required>
+            </div>
+
+            <div class="question">
+                <label>Você é bom fazendo construções de Dragon Ball?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="construcao_db" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="construcao_db" value="+ou-"> +ou-</label>
+                    <label class="radio-item"><input type="radio" name="construcao_db" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Você sabe mexer bem com o mod CustomNpc?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="customnpc" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="customnpc" value="+ou-"> +ou-</label>
+                    <label class="radio-item"><input type="radio" name="customnpc" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Você sabe mexer bem com o mod Armourer's WorkShop?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="armourers" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="armourers" value="+ou-"> +ou-</label>
+                    <label class="radio-item"><input type="radio" name="armourers" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Acha que tem experiência o suficiente para se tornar qual cargo em nossa equipe?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="cargo" value="QuestMaker" required> QuestMaker</label>
+                    <label class="radio-item"><input type="radio" name="cargo" value="Builder"> Builder</label>
+                    <label class="radio-item"><input type="radio" name="cargo" value="Moderador"> Moderador</label>
+                    <label class="radio-item"><input type="radio" name="cargo" value="Ajudante"> Ajudante</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>Você jura se dedicar ao máximo que conseguir a staff? (Se descumprir, não será aceito novamente. Se a resposta for Não, nem envie!)</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="dedicacao" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="dedicacao" value="Não"> Não</label>
+                </div>
+            </div>
+
+            <h3>Perguntas adicionais</h3>
+
+            <div class="question">
+                <label>Conte mais sobre você!</label>
+                <textarea id="sobre_voce" rows="4"></textarea>
+            </div>
+
+            <div class="question">
+                <label>Qual as configurações do seu computador?</label>
+                <textarea id="config_pc" rows="3"></textarea>
+            </div>
+
+            <div class="question">
+                <label>Por que aceitaríamos você na staff do DragonRage?</label>
+                <textarea id="por_que_aceitar" rows="5"></textarea>
+            </div>
+
+            <button type="submit">Enviar Formulário para Avaliação</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('dragonRageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const getRadioVal = (name) => document.querySelector(`input[name="${name}"]:checked`)?.value || "Não respondido";
+
+            const turnosMarcados = Array.from(document.querySelectorAll('input[name="turnos"]:checked')).map(cb => cb.value).join(", ");
+            const turnosFinal = turnosMarcados !== "" ? turnosMarcados : "Nenhum selecionado";
+
+            const dedicacao = getRadioVal("dedicacao");
+            if (dedicacao === "Não") {
+                alert("Formulário cancelado: Você marcou 'Não' na pergunta sobre dedicação à staff.");
+                return;
+            }
+
+            const webhookUrl = 'https://discord.com/api/webhooks/1477458812872036392/JygdDJ7NHOB2D3F-irNf7If9L0OqIm1t9lFc6zqJrkYjPHq4Ugaj0hjQHzzIWEWwaAcB';
+
+            const btn = document.querySelector('button[type="submit"]');
+            btn.innerText = "Enviando...";
+            btn.disabled = true;
+
+            const sobreVoceVal = document.getElementById('sobre_voce').value || "Não preenchido";
+            const configPcVal = document.getElementById('config_pc').value || "Não preenchido";
+            const porQueAceitarVal = document.getElementById('por_que_aceitar').value || "Não preenchido";
+
+const payload = {
+    username: "Formularios Flash Point",
+    avatar_url: "https://images.alphacoders.com/126/1266726.png",
+    content: `Novo formulário recebido de **${document.getElementById('nome').value}** (<@${document.getElementById('discord_user').value}>)!`,
+    embeds: [
+        {
+            title: "1️⃣ Informações Pessoais & Perfil",
+            color: 16729344,
+            fields: [
+                { name: "👤 Nome", value: document.getElementById('nome').value, inline: true },
+                { name: "🎂 Idade", value: document.getElementById('idade').value + " anos", inline: true },
+                { name: "🎮 Plataforma", value: getRadioVal("plataforma"), inline: true },
+                { name: "Discord", value: document.getElementById('discord_user').value, inline: true },
+                { name: "Responsável?", value: getRadioVal("responsavel"), inline: true },
+                { name: "Maduro?", value: getRadioVal("madura"), inline: true },
+                { name: "Boa comunicação?", value: getRadioVal("comunicacao"), inline: true },
+                { name: "Boa ortografia?", value: getRadioVal("ortografia"), inline: true },
+                { name: "Possui Microfone?", value: getRadioVal("microfone"), inline: true },
+                { name: "🕒 Turnos Disponíveis", value: turnosFinal, inline: false }
+            ]
+        },
+        {
+            title: "2️⃣ Experiência com DragonBlock C & Mods",
+            color: 16711680, 
+            fields: [
+                { name: "Sabe jogar DBC?", value: getRadioVal("sabe_dbc"), inline: false },
+                { name: "Tempo jogando DBC", value: document.getElementById('tempo_dbc').value, inline: true },
+                { name: "Tempo na Staff DBC", value: document.getElementById('tempo_trabalho_dbc').value, inline: true },
+                { name: "Já trabalhou em quais servers?", value: document.getElementById('servidores_trabalhou').value, inline: false },
+                { name: "Sabe jogar NO SERVIDOR?", value: getRadioVal("sabe_servidor"), inline: true },
+                { name: "Construções de DB?", value: getRadioVal("construcao_db"), inline: true },
+                { name: "CustomNpc?", value: getRadioVal("customnpc"), inline: true },
+                { name: "Armourer's WorkShop?", value: getRadioVal("armourers"), inline: true },
+                { name: "🎯 Cargo Pretendido", value: `**${getRadioVal("cargo")}**`, inline: false }
+            ]
+        },
+        {
+            title: "3️⃣ Adicionais & Motivação",
+            color: 8388608, 
+            fields: [
+                { name: "💻 Configuração do PC", value: configPcVal, inline: false },
+                { name: "📖 Sobre o Candidato", value: sobreVoceVal, inline: false },
+                { name: "🔥 Por que aceitá-lo?", value: porQueAceitarVal, inline: false },
+                { name: "Jura Dedicação?", value: dedicacao, inline: false }
+            ],
+            footer: { text: "Sistema de Recrutamento Flash Point" },
+            timestamp: new Date().toISOString()
+        }
+    ]
+};
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Seu formulário foi enviado com sucesso para a equipe do Flash Point! Aguarde a resposta em sua DM do Discord.');
+                    document.getElementById('dragonRageForm').reset();
+                } else {
+                    alert('Erro ao enviar. Tente novamente mais tarde.');
+                }
+            })
+            .catch(error => {
+                alert('Erro de conexão ao enviar formulário.');
+            })
+            .finally(() => {
+                btn.innerText = "Enviar Formulário para Avaliação";
+                btn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
