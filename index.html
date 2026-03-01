@@ -238,14 +238,6 @@
             </div>
 
             <div class="question">
-                <label>Você sabe jogar no servidor?</label>
-                <div class="radio-group">
-                    <label class="radio-item"><input type="radio" name="sabe_servidor" value="Sim" required> Sim</label>
-                    <label class="radio-item"><input type="radio" name="sabe_servidor" value="Não"> Não</label>
-                </div>
-            </div>
-
-            <div class="question">
                 <label>Você trabalha há quanto tempo em servidores de DragonBlock C?</label>
                 <input type="text" id="tempo_trabalho_dbc" required>
             </div>
@@ -258,6 +250,14 @@
                     <label class="radio-item"><input type="radio" name="construcao_db" value="Não"> Não</label>
                 </div>
             </div>
+
+            <div class="question">
+                <label>Você sabe mexer bem com o mod CustomNpc?</label>
+                <div class="radio-group">
+                    <label class="radio-item"><input type="radio" name="customnpc" value="Sim" required> Sim</label>
+                    <label class="radio-item"><input type="radio" name="customnpc" value="+ou-"> +ou-</label>
+                    <label class="radio-item"><input type="radio" name="customnpc" value="Não"> Não</label>
+                </div>
             </div>
 
             <div class="question">
@@ -276,6 +276,8 @@
                     <label class="radio-item"><input type="checkbox" name="cargo" value="Builder"> Builder</label>
                     <label class="radio-item"><input type="checkbox" name="cargo" value="Moderador"> Moderador</label>
                     <label class="radio-item"><input type="checkbox" name="cargo" value="Ajudante"> Ajudante</label>
+                    <label class="radio-item"><input type="checkbox" name="cargo" value="Scripter"> Scripter</label>
+                    <label class="radio-item"><input type="checkbox" name="cargo" value="Mod Dev"> Mod Dev</label>
                 </div>
             </div>
 
@@ -326,6 +328,31 @@
                     <input type="text" id="mod_p3">
                 </div>
             </div>
+
+            <div id="secao_scripter" class="secao-cargo">
+                <h3 style="margin-top: 10px;">📜 Perguntas para Scripter</h3>
+                <div class="question">
+                    <label>Você trabalha com isso a quanto tempo?</label>
+                    <input type="text" id="scr_p1">
+                </div>
+                <div class="question">
+                    <label>Já criou algum projeto? Se sim, qual?</label>
+                    <textarea id="scr_p2" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div id="secao_moddev" class="secao-cargo">
+                <h3 style="margin-top: 10px;">⚙️ Perguntas para Mod Dev</h3>
+                <div class="question">
+                    <label>Você trabalha com isso a quanto tempo?</label>
+                    <input type="text" id="md_p1">
+                </div>
+                <div class="question">
+                    <label>Já criou algum projeto? Se sim, qual?</label>
+                    <textarea id="md_p2" rows="3"></textarea>
+                </div>
+            </div>
+
             <div class="question">
                 <label>Você jura se dedicar ao máximo que conseguir a staff? (Se descumprir, não será aceito novamente. Se a resposta for Não, nem envie!)</label>
                 <div class="radio-group">
@@ -356,20 +383,22 @@
     </div>
 
     <script>
-
         const checkboxesCargo = document.querySelectorAll('input[name="cargo"]');
         checkboxesCargo.forEach(cb => {
             cb.addEventListener('change', () => {
                 const questChecked = document.querySelector('input[name="cargo"][value="QuestMaker"]').checked;
                 const builderChecked = document.querySelector('input[name="cargo"][value="Builder"]').checked;
                 const modChecked = document.querySelector('input[name="cargo"][value="Moderador"]').checked;
+                const scrChecked = document.querySelector('input[name="cargo"][value="Scripter"]').checked;
+                const mdChecked = document.querySelector('input[name="cargo"][value="Mod Dev"]').checked;
                 
                 document.getElementById('secao_questmaker').style.display = questChecked ? 'block' : 'none';
                 document.getElementById('secao_builder').style.display = builderChecked ? 'block' : 'none';
                 document.getElementById('secao_moderador').style.display = modChecked ? 'block' : 'none';
+                document.getElementById('secao_scripter').style.display = scrChecked ? 'block' : 'none';
+                document.getElementById('secao_moddev').style.display = mdChecked ? 'block' : 'none';
             });
         });
-
 
         document.getElementById('flashpointForm').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -428,7 +457,6 @@
                         { name: "Tempo jogando DBC", value: document.getElementById('tempo_dbc').value, inline: true },
                         { name: "Tempo na Staff DBC", value: document.getElementById('tempo_trabalho_dbc').value, inline: true },
                         { name: "Já trabalhou em quais servers?", value: document.getElementById('servidores_trabalhou').value, inline: false },
-                        { name: "Sabe jogar NO SERVIDOR?", value: getRadioVal("sabe_servidor"), inline: true },
                         { name: "Construções de DB?", value: getRadioVal("construcao_db"), inline: true },
                         { name: "CustomNpc?", value: getRadioVal("customnpc"), inline: true },
                         { name: "Armourer's WorkShop?", value: getRadioVal("armourers"), inline: true },
@@ -469,6 +497,28 @@
                         { name: "É bom com isso?", value: document.getElementById('mod_p1').value || "Não respondeu", inline: false },
                         { name: "Tem responsabilidade?", value: document.getElementById('mod_p2').value || "Não respondeu", inline: false },
                         { name: "Seria educado com os membros?", value: document.getElementById('mod_p3').value || "Não respondeu", inline: false }
+                    ]
+                });
+            }
+
+            if (cargosMarcados.includes("Scripter")) {
+                embedsArray.push({
+                    title: "📜 Respostas: Scripter",
+                    color: 3066993,
+                    fields: [
+                        { name: "Trabalha com isso a quanto tempo?", value: document.getElementById('scr_p1').value || "Não respondeu", inline: false },
+                        { name: "Já criou algum projeto? Se sim, qual?", value: document.getElementById('scr_p2').value || "Não respondeu", inline: false }
+                    ]
+                });
+            }
+
+            if (cargosMarcados.includes("Mod Dev")) {
+                embedsArray.push({
+                    title: "⚙️ Respostas: Mod Dev",
+                    color: 9807270,
+                    fields: [
+                        { name: "Trabalha com isso a quanto tempo?", value: document.getElementById('md_p1').value || "Não respondeu", inline: false },
+                        { name: "Já criou algum projeto? Se sim, qual?", value: document.getElementById('md_p2').value || "Não respondeu", inline: false }
                     ]
                 });
             }
@@ -518,4 +568,3 @@
     </script>
 </body>
 </html>
-
