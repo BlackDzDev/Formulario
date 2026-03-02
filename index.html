@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário Flash Point</title>
+    <title>Formulário Venus Network</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a1a;
+            background-color: #0d0d14; 
             color: #f0f0f0;
             margin: 0;
             padding: 20px;
@@ -15,13 +15,13 @@
             justify-content: center;
         }
         .container {
-            background-color: #2b2b2b;
+            background-color: #1a1a2e; 
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.6);
             max-width: 700px;
             width: 100%;
-            border-top: 5px solid #ff4500;
+            border-top: 5px solid #8a2be2; 
         }
         .banner {
             width: 100%;
@@ -29,16 +29,16 @@
             object-fit: cover;
             border-radius: 5px;
             margin-bottom: 20px;
-            border: 2px solid #ff4500;
+            border: 2px solid #8a2be2;
         }
         h1 {
             text-align: center;
-            color: #ff4500;
+            color: #8a2be2;
             margin-bottom: 5px;
         }
         .warning-box {
-            background-color: #3f1d1d;
-            border-left: 4px solid #ff4500;
+            background-color: #2a1b38; 
+            border-left: 4px solid #8a2be2;
             padding: 15px;
             margin-bottom: 25px;
             border-radius: 4px;
@@ -46,41 +46,41 @@
             line-height: 1.5;
         }
         h3 {
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid #4a4e69;
             padding-bottom: 5px;
             margin-top: 30px;
-            color: #ffa500;
+            color: #b388ff; 
         }
         .question {
             margin-bottom: 25px;
-            background-color: #242424;
+            background-color: #22223b; 
             padding: 15px;
             border-radius: 8px;
-            border: 1px solid #333;
+            border: 1px solid #4a4e69;
         }
         .question > label {
             display: block;
             margin-bottom: 12px;
             font-weight: bold;
             font-size: 17px;
-            color: #ff9500;
-            border-left: 4px solid #ff4500;
+            color: #b388ff;
+            border-left: 4px solid #8a2be2;
             padding-left: 10px;
         }
         input[type="text"], input[type="number"], textarea, select {
             width: 100%;
             padding: 12px;
-            border: 1px solid #444;
+            border: 1px solid #4a4e69;
             border-radius: 5px;
-            background-color: #151515;
+            background-color: #12121f; 
             color: #fff;
             box-sizing: border-box;
             font-family: inherit;
             font-size: 15px;
         }
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             outline: none;
-            border-color: #ff4500;
+            border-color: #8a2be2;
         }
         .radio-group, .checkbox-group {
             display: flex;
@@ -105,7 +105,7 @@
         button {
             width: 100%;
             padding: 15px;
-            background-color: #ff4500;
+            background-color: #8a2be2; 
             color: white;
             border: none;
             border-radius: 5px;
@@ -115,31 +115,57 @@
             transition: 0.3s;
             margin-top: 20px;
         }
-        button:hover { background-color: #d13800; }
+        button:hover { background-color: #6a0dad; }
         
         .secao-cargo {
             display: none;
-            border: 1px dashed #ff4500;
+            border: 1px dashed #8a2be2;
             padding: 10px;
             border-radius: 8px;
             margin-bottom: 20px;
-            background-color: #1f1f1f;
+            background-color: #1a1a2e;
+        }
+        
+        .nome_mod {
+            color: #b388ff;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="https://images.alphacoders.com/126/1266726.png" alt="Gohan Beast Banner" class="banner">
+        <img src="https://cdn.discordapp.com/attachments/1477674668319051849/1477682242913439764/1999796.jpg?ex=69a5a654&is=69a454d4&hm=ff456992fe7acc999c7324f47a26884a4258270ace3cdd16a13cd3b719e4352b&" alt="Venus" class="banner">
 
-        <h1>Formulário Flash Point</h1>
+        <h1>Formulário Venus Network</h1>
         
-        <div class="warning-box">
-            <STRONG>O servidor ainda não está aberto, então nós necessitamos que todos que forem aceitos tenham paciência. Caso você não tenha paciência para esperar o servidor abrir, favor não fazer o formulário.</STRONG><br><br>
+        <div id="etapa1">
+            <div class="warning-box">
+                <STRONG>Bem-vindo ao recrutamento da equipe Venus Network!</STRONG><br><br>
+                Antes de iniciarmos, por favor selecione com qual universo você pretende trabalhar no nosso servidor.
+            </div>
+
+            <div class="question">
+                <label>Com qual projeto você deseja trabalhar?</label>
+                <select id="mod_escolhido" required>
+                    <option value="" disabled selected>Selecione uma opção...</option>
+                    <option value="Dragon Block C">Dragon Block C</option>
+                    <option value="Nanatsu">Nanatsu</option>
+                    <option value="Naruto C">Naruto C</option>
+                    <option value="Bleach" disabled>Bleach (Em breve)</option>
+                    <option value="Jujutsu Kaisen" disabled>Jujutsu Kaisen (Em breve)</option>
+                </select>
+            </div>
+
+            <button type="button" id="btn_continuar">Continuar para o Formulário</button>
         </div>
 
-        <form id="flashpointForm">
+        <form id="venusForm" style="display: none;">
             
+            <div class="warning-box">
+                <STRONG>O servidor ainda não está aberto, então nós necessitamos que todos que forem aceitos tenham paciência. Caso você não tenha paciência para esperar o servidor abrir, favor não fazer o formulário.</STRONG>
+            </div>
+
             <h3>Informações Pessoais</h3>
 
             <div class="question">
@@ -219,7 +245,7 @@
             <h3>Perguntas sobre experiência</h3>
 
             <div class="question">
-                <label>Você sabe jogar DragonBlock C?</label>
+                <label>Você sabe jogar <span class="nome_mod">Dragon Block C</span>?</label>
                 <div class="radio-group">
                     <label class="radio-item"><input type="radio" name="sabe_dbc" value="Sim" required> Sim</label>
                     <label class="radio-item"><input type="radio" name="sabe_dbc" value="Sim, mais ainda tenho coisas a aprender"> Sim, mais ainda tenho coisas a aprender.</label>
@@ -228,22 +254,22 @@
             </div>
 
             <div class="question">
-                <label>Você joga DragonBlock C a quanto tempo?</label>
+                <label>Você joga <span class="nome_mod">Dragon Block C</span> a quanto tempo?</label>
                 <input type="text" id="tempo_dbc" required>
             </div>
 
             <div class="question">
-                <label>Em quais servidores de DragonBlock C você já trabalhou?</label>
+                <label>Em quais servidores de <span class="nome_mod">Dragon Block C</span> você já trabalhou?</label>
                 <input type="text" id="servidores_trabalhou" required>
             </div>
 
             <div class="question">
-                <label>Você trabalha há quanto tempo em servidores de DragonBlock C?</label>
+                <label>Você trabalha há quanto tempo em servidores de <span class="nome_mod">Dragon Block C</span>?</label>
                 <input type="text" id="tempo_trabalho_dbc" required>
             </div>
 
             <div class="question">
-                <label>Você é bom fazendo construções de Dragon Ball?</label>
+                <label>Você é bom fazendo construções de <span class="nome_mod">Dragon Block C</span>?</label>
                 <div class="radio-group">
                     <label class="radio-item"><input type="radio" name="construcao_db" value="Sim" required> Sim</label>
                     <label class="radio-item"><input type="radio" name="construcao_db" value="+ou-"> +ou-</label>
@@ -270,7 +296,7 @@
             </div>
 
             <div class="question">
-                <label>Acha que tem experiência o suficiente para se tornar qual cargo em nossa equipe? (Pode marcar vários)</label>
+                <label>Acha que tem experiência o suficiente para se tornar qual cargo em nossa equipe? (Pode marcar mais de um)</label>
                 <div class="checkbox-group">
                     <label class="radio-item"><input type="checkbox" name="cargo" value="QuestMaker"> QuestMaker</label>
                     <label class="radio-item"><input type="checkbox" name="cargo" value="Builder"> Builder</label>
@@ -284,7 +310,7 @@
             <div id="secao_questmaker" class="secao-cargo">
                 <h3 style="margin-top: 10px;">🧭 Perguntas para QuestMaker</h3>
                 <div class="question">
-                    <label>Você sabe criar missões usando CustomNPCs no Dragon Block C?</label>
+                    <label>Você sabe criar missões usando CustomNPCs no <span class="nome_mod">Dragon Block C</span>?</label>
                     <input type="text" id="qm_p1">
                 </div>
                 <div class="question">
@@ -300,7 +326,7 @@
             <div id="secao_builder" class="secao-cargo">
                 <h3 style="margin-top: 10px;">🏗 Perguntas para Builder</h3>
                 <div class="question">
-                    <label>Você sabe construir mapas no estilo Dragon Ball (ex: templo, planeta, arena)?</label>
+                    <label>Você sabe construir mapas no estilo <span class="nome_mod">Dragon Block C</span>?</label>
                     <input type="text" id="bld_p1">
                 </div>
                 <div class="question">
@@ -308,7 +334,7 @@
                     <input type="text" id="bld_p2">
                 </div>
                 <div class="question">
-                    <label>Já construiu algo inspirado em Dragon Block C antes?</label>
+                    <label>Já construiu algo inspirado em <span class="nome_mod">Dragon Block C</span> antes?</label>
                     <input type="text" id="bld_p3">
                 </div>
             </div>
@@ -374,7 +400,7 @@
             </div>
 
             <div class="question">
-                <label>Por que aceitaríamos você na staff do Flash Point?</label>
+                <label>Por que aceitaríamos você na staff da Venus Network</label>
                 <textarea id="por_que_aceitar" rows="5"></textarea>
             </div>
 
@@ -383,6 +409,22 @@
     </div>
 
     <script>
+        document.getElementById('btn_continuar').addEventListener('click', function() {
+            const modSelecionado = document.getElementById('mod_escolhido').value;
+            
+            if (!modSelecionado) {
+                alert('Por favor, selecione com qual mod você deseja trabalhar antes de continuar!');
+                return;
+            }
+
+            document.querySelectorAll('.nome_mod').forEach(el => {
+                el.innerText = modSelecionado;
+            });
+
+            document.getElementById('etapa1').style.display = 'none';
+            document.getElementById('venusForm').style.display = 'block';
+        });
+
         const checkboxesCargo = document.querySelectorAll('input[name="cargo"]');
         checkboxesCargo.forEach(cb => {
             cb.addEventListener('change', () => {
@@ -400,7 +442,7 @@
             });
         });
 
-        document.getElementById('flashpointForm').addEventListener('submit', function(event) {
+        document.getElementById('venusForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
             const getRadioVal = (name) => document.querySelector(`input[name="${name}"]:checked`)?.value || "Não respondido";
@@ -428,6 +470,7 @@
             btn.innerText = "Enviando...";
             btn.disabled = true;
 
+            const modSelecionado = document.getElementById('mod_escolhido').value;
             const sobreVoceVal = document.getElementById('sobre_voce').value || "Não preenchido";
             const configPcVal = document.getElementById('config_pc').value || "Não preenchido";
             const porQueAceitarVal = document.getElementById('por_que_aceitar').value || "Não preenchido";
@@ -435,8 +478,9 @@
             let embedsArray = [
                 {
                     title: "1️⃣ Informações Pessoais & Perfil",
-                    color: 16729344,
+                    color: 9055202, 
                     fields: [
+                        { name: "🌌 Projeto Desejado", value: `**${modSelecionado}**`, inline: false },
                         { name: "👤 Nome", value: document.getElementById('nome').value, inline: true },
                         { name: "🎂 Idade", value: document.getElementById('idade').value + " anos", inline: true },
                         { name: "🎮 Plataforma", value: getRadioVal("plataforma"), inline: true },
@@ -450,14 +494,14 @@
                     ]
                 },
                 {
-                    title: "2️⃣ Experiência com DragonBlock C & Mods",
-                    color: 16711680, 
+                    title: `2️⃣ Experiência com ${modSelecionado} & Mods`,
+                    color: 4286945, 
                     fields: [
-                        { name: "Sabe jogar DBC?", value: getRadioVal("sabe_dbc"), inline: false },
-                        { name: "Tempo jogando DBC", value: document.getElementById('tempo_dbc').value, inline: true },
-                        { name: "Tempo na Staff DBC", value: document.getElementById('tempo_trabalho_dbc').value, inline: true },
+                        { name: `Sabe jogar ${modSelecionado}?`, value: getRadioVal("sabe_dbc"), inline: false },
+                        { name: "Tempo jogando o mod", value: document.getElementById('tempo_dbc').value, inline: true },
+                        { name: "Tempo na Staff do mod", value: document.getElementById('tempo_trabalho_dbc').value, inline: true },
                         { name: "Já trabalhou em quais servers?", value: document.getElementById('servidores_trabalhou').value, inline: false },
-                        { name: "Construções de DB?", value: getRadioVal("construcao_db"), inline: true },
+                        { name: "Construções focadas no mod?", value: getRadioVal("construcao_db"), inline: true },
                         { name: "CustomNpc?", value: getRadioVal("customnpc"), inline: true },
                         { name: "Armourer's WorkShop?", value: getRadioVal("armourers"), inline: true },
                         { name: "🎯 Cargo(s) Pretendido(s)", value: `**${cargosFinal}**`, inline: false }
@@ -468,7 +512,7 @@
             if (cargosMarcados.includes("QuestMaker")) {
                 embedsArray.push({
                     title: "🧭 Respostas: QuestMaker",
-                    color: 3447003,
+                    color: 11765759, 
                     fields: [
                         { name: "Sabe criar missões com CustomNPCs?", value: document.getElementById('qm_p1').value || "Não respondeu", inline: false },
                         { name: "Como balancearia as quests?", value: document.getElementById('qm_p2').value || "Não respondeu", inline: false },
@@ -482,9 +526,9 @@
                     title: "🏗 Respostas: Builder",
                     color: 15105570,
                     fields: [
-                        { name: "Sabe construir mapas estilo DB?", value: document.getElementById('bld_p1').value || "Não respondeu", inline: false },
+                        { name: "Sabe construir mapas no estilo do mod?", value: document.getElementById('bld_p1').value || "Não respondeu", inline: false },
                         { name: "WorldEdit ou Manual?", value: document.getElementById('bld_p2').value || "Não respondeu", inline: false },
-                        { name: "Já construiu inspirado em DBC?", value: document.getElementById('bld_p3').value || "Não respondeu", inline: false }
+                        { name: "Já construiu algo inspirado no mod?", value: document.getElementById('bld_p3').value || "Não respondeu", inline: false }
                     ]
                 });
             }
@@ -525,21 +569,21 @@
 
             embedsArray.push({
                 title: "3️⃣ Adicionais & Motivação",
-                color: 8388608, 
-                fields: [
-                    { name: "💻 Configuração do PC", value: configPcVal, inline: false },
+                color: 4734347, 
+                fields: [                    { name: "💻 Configuração do PC", value: configPcVal, inline: false },
                     { name: "📖 Sobre o Candidato", value: sobreVoceVal, inline: false },
                     { name: "🔥 Por que aceitá-lo?", value: porQueAceitarVal, inline: false },
                     { name: "Jura Dedicação?", value: dedicacao, inline: false }
+
                 ],
-                footer: { text: "Sistema de Recrutamento Flash Point" },
+                footer: { text: "Sistema de Recrutamento Venus Network" },
                 timestamp: new Date().toISOString()
             });
 
             const payload = {
-                username: "Formulários Flash Point",
+                username: "Formulários Venus Network",
                 avatar_url: "https://images.alphacoders.com/126/1266726.png",
-                content: `Novo formulário recebido de **${document.getElementById('nome').value}** (<@${document.getElementById('discord_user').value}>)!`,
+                content: `Novo formulário recebido de **${document.getElementById('nome').value}** (<@${document.getElementById('discord_user').value}>) para a equipe de **${modSelecionado}**!`,
                 embeds: embedsArray
             };
 
@@ -550,9 +594,12 @@
             })
             .then(response => {
                 if (response.ok) {
-                    alert('Seu formulário foi enviado com sucesso para a equipe do Flash Point! Aguarde a resposta em sua DM do Discord.');
-                    document.getElementById('flashpointForm').reset();
+                    alert('Seu formulário foi enviado com sucesso para a equipe da Venus Network! Aguarde a resposta em sua DM do Discord.');
+                    document.getElementById('venusForm').reset();
                     document.querySelectorAll('.secao-cargo').forEach(el => el.style.display = 'none');
+                    document.getElementById('venusForm').style.display = 'none';
+                    document.getElementById('etapa1').style.display = 'block';
+                    document.getElementById('mod_escolhido').value = "";
                 } else {
                     alert('Erro ao enviar. Tente novamente mais tarde.');
                 }
@@ -568,5 +615,3 @@
     </script>
 </body>
 </html>
-
-
